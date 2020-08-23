@@ -3,7 +3,7 @@ from random import randrange
 
 def convert_string(y):
     """
-    :param y: string to be guessed
+    :param y: string to be converted into a list, character by character
     :return: an ordered list of the characters in the list
     """
     return [x for x in y]
