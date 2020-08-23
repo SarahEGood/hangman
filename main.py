@@ -120,6 +120,7 @@ def end_game(guess, revealed):
     When the while loop ends on the main function, tells the user if they won or lost.
     Takes the guess list and revealed list as parameters.
     """
+    print('')
     if guess == revealed:
         print('You win! The word is {}!'.format(''.join(guess)))
     else:
