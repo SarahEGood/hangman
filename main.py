@@ -158,6 +158,18 @@ def init_game():
     return guess_me, word_length, revealed_string
 
 
+def restart_game():
+    rest = str(input('Would you like to play again? [y/n]: '))
+    print('')
+    if rest.lower() in ['y', 'yes']:
+        main()
+    elif rest.lower() in ['n', 'no']:
+        pass
+    else:
+        print('Enter a valid response.')
+        restart_game()
+
+
 def main():
     print('''
 888                                                           
@@ -192,6 +204,7 @@ def main():
             guesses -= 1
 
     end_game(guess_string, revealed_string)
+    restart_game()
 
 
 if __name__ == '__main__':
