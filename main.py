@@ -134,7 +134,7 @@ def get_letter():
             print("You must enter a single letter.")
             print('')
             letter = str(input('Guess the next letter: '))
-    return letter
+    return letter.lower()
 
 
 def main():
