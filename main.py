@@ -124,6 +124,13 @@ def select_word():
 
 
 def reveal_letter(guess, revealed, letter):
+    """
+    :param guess: The list of letters of the word the user is trying to guess.
+    :param revealed: The list of letters of the letters revealed so far.
+    :param letter: The letter guessed by the user.
+    :return: Modifies the "revealed" list so that the '_' character replaced corresponding to the letter's position on
+    the guess list.
+    """
     for i in range(len(guess)):
         if letter == guess[i]:
             revealed[i] = letter
@@ -152,6 +159,10 @@ def get_letter():
 
 
 def init_game():
+    """
+    :return: guess_me (word selected randomly to be guessed), word_length (length of the word),
+    revealed_string (a string of '_''s same length as the word)
+    """
     guess_me = convert_string(select_word())
     word_length = len(guess_me)
     revealed_string = ['_'] * word_length
@@ -159,6 +170,12 @@ def init_game():
 
 
 def restart_game():
+    """
+    Runs at the end of main() to ask user if they want to replay the game.
+    If the user selects a "yes" value, main() is called so the game restarts.
+    Otherwise, the function runs itself again (if the user input was invalid) or ends the function if the user answers
+    "no" or "n".
+    """
     rest = str(input('Would you like to play again? [y/n]: '))
     print('')
     if rest.lower() in ['y', 'yes']:
@@ -171,6 +188,10 @@ def restart_game():
 
 
 def main():
+    """
+    The main game function. Asks user to guess characters in a word. If the user reveals the word in the allotted number
+    of guesses, they win. Otherwise, they lose.
+    """
     print('''
 888                                                           
 888                                                           
