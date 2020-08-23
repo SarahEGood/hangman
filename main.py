@@ -1,10 +1,11 @@
 from random import randrange
 
+
 def difficulty_selection():
     """
     :return: Game difficulty based on user input.
     """
-    difficulties = {'Easy':3, 'Medium':2, 'Hard':1}
+    difficulties = {'Easy': 3, 'Medium': 2, 'Hard': 1}
     diff = str(input('Select your difficulty: ')).title()
     while diff not in difficulties.keys():
         print('')
@@ -12,6 +13,7 @@ def difficulty_selection():
         print('')
         diff = str(input('Select your difficulty: '))
     return difficulties[diff]
+
 
 def convert_string(y):
     """
@@ -148,11 +150,13 @@ def get_letter():
             letter = str(input('Guess the next letter: '))
     return letter.lower()
 
+
 def init_game():
     guess_me = convert_string(select_word())
     word_length = len(guess_me)
     revealed_string = ['_'] * word_length
     return guess_me, word_length, revealed_string
+
 
 def main():
     print('''
@@ -174,6 +178,7 @@ def main():
     print('Welcome to Hangman.')
     print('')
     print('Your word has {} letters.'.format(string_length))
+
     while '_' in revealed_string and guesses != 0:
         print('You have {} guesses left.'.format(guesses))
         print('')
